@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nexora - Smart Home Solutions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: black;
+            height: 90px;
+        }
+
+        .navbar .navbar-brand img {
+            height: 80px;
+            margin-left: 0;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+            margin: 0 12px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffc107 !important;
+        }
+
+        .btn-custom {
+            background-color: #ffc107;
+            color: black;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .btn-custom:hover {
+            background-color: #e0a800;
+            color: white;
+        }
+
+        .btn-outline-white {
+            border: 2px solid white;
+            color: white;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .btn-outline-white:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .header-section {
+            background: url('SMH.jpg') no-repeat center center/cover;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .header-overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .header-content {
+            z-index: 2;
+            width: 100%;
+            padding: 0 15px;
+        }
+
+        .header-section h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .header-section p {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #f1f1f1;
+        }
+
+        .demo-buttons {
+            margin-top: 15px;
+        }
+
+        .modal textarea {
+            resize: none;
+        }
+
+        .testimonial-section {
+            padding: 40px 0;
+            background-color: #f8f9fa;
+        }
+
+        .testimonial-carousel .carousel-control-prev-icon,
+        .testimonial-carousel .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+        }
+
+        .testimonial-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .testimonial-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            object-fit: cover;
+        }
+
+        .testimonial-item h5 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-item small {
+            color: #6c757d;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-item .stars {
+            color: #ffc107;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+            color: #495057;
+        }
+
+        #services .card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        #services .card-body {
+            background-color: #111;
+        }
+
+        #services .card-footer {
+            background-color: #222 !important;
+        }
+
+        #faq .accordion-button:not(.collapsed) {
+            color: black;
+            background-color: #e9ecef;
+        }
+
+        #blogs .card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        #contact-us {
+            padding: 40px 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        #contact-us a {
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                height: auto;
+            }
+
+            .navbar .navbar-brand img {
+                height: 60px;
+            }
+
+            .header-section h1 {
+                font-size: 24px;
+            }
+
+            .header-section p {
+                font-size: 16px;
+            }
+
+            .navbar-collapse {
+                justify-content: center !important;
+            }
+
+            .navbar-nav {
+                text-align: center;
+            }
+
+            .ms-auto {
+                margin-left: 0 !important;
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .ms-auto .btn {
+                margin: 5px 0 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="#home">
+                <img src="real.png" alt="Nexora Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-start" id="navbarNav">
+                <ul class="navbar-nav ms-3">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blogs">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact-us">Contact us</a></li>
+                </ul>
+
+                <div class="ms-auto d-flex align-items-center">
+                    <a href="https://wa.me/917048946837" target="_blank"
+                        class="btn btn-outline-white"><u>+917048946837</u></a>
+                    <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#quoteModal">Fill Form for
+                        free consultation</button>
+                    <a href="#demo-section" class="btn btn-outline-white"> Live demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="header-section" id="home" style="padding-top: 90px;">
+        <div class="header-overlay"></div>
+        <div class="container header-content">
+            <h1>Welcome to Nexora – Most Favorite Destination for Beautiful Home Automation Solutions</h1>
+            <p>Experience modern living with intuitive smart home technology that adapts to your lifestyle. From
+                lighting
+                to security, we provide elegant, efficient automation for every space.</p>
+            <div class="demo-buttons">
+                <button class="btn btn-custom">Book a Free Demo</button>
+                <button class="btn btn-custom">Watch Demo</button>
+            </div>
+        </div>
+    </section>
+
+<section class="testimonial-section py-5" style="background-color: #000;">
+  <div class="container">
+    <h2 class="text-center text-white mb-5 fw-bold">What Our Customers Say</h2>
+
+    <div class="row g-4">
+
+      <!-- Testimonial Card -->
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial-card bg-white text-dark p-4 rounded-4 shadow h-100">
+          <div class="mb-3">
+            <h5 class="mb-0">Priya Sharma</h5>
+            <small class="text-muted">Interior Designer, Delhi</small>
+          </div>
+          <div class="text-warning mb-2">★★★★★ <small class="text-muted">(4.7)</small></div>
+          <p class="fst-italic mb-0">“Nexora completely changed the vibe of my home! The automation is seamless, and their team was super friendly.”</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial-card bg-white text-dark p-4 rounded-4 shadow h-100">
+          <div class="mb-3">
+            <h5 class="mb-0">Sneha Iyer</h5>
+            <small class="text-muted">Architect, Chennai</small>
+          </div>
+          <div class="text-warning mb-2">★★★★½ <small class="text-muted">(4.5)</small></div>
+          <p class="fst-italic mb-0">“Impressed with Nexora’s fast setup and clean design. I recommend it to anyone building a modern home.”</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial-card bg-white text-dark p-4 rounded-4 shadow h-100">
+          <div class="mb-3">
+            <h5 class="mb-0">Amit Kulkarni</h5>
+            <small class="text-muted">Business Owner, Pune</small>
+          </div>
+          <div class="text-warning mb-2">★★★★★ <small class="text-muted">(5.0)</small></div>
+          <p class="fst-italic mb-0">“Professional service and on-time delivery. My office feels futuristic thanks to Nexora.”</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial-card bg-white text-dark p-4 rounded-4 shadow h-100">
+          <div class="mb-3">
+            <h5 class="mb-0">Neha Reddy</h5>
+            <small class="text-muted">Freelancer, Hyderabad</small>
+          </div>
+          <div class="text-warning mb-2">★★★★½ <small class="text-muted">(4.6)</small></div>
+          <p class="fst-italic mb-0">“The app is easy to use, and I love the lighting control. My guests are always impressed!”</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial-card bg-white text-dark p-4 rounded-4 shadow h-100">
+          <div class="mb-3">
+            <h5 class="mb-0">Karan Mehta</h5>
+            <small class="text-muted">Startup Founder, Bengaluru</small>
+          </div>
+          <div class="text-warning mb-2">★★★★☆ <small class="text-muted">(4.3)</small></div>
+          <p class="fst-italic mb-0">“I control my entire house from my phone. Nexora nailed it with smart security and energy savings.”</p>
+        </div>
+      </div>
+
+
+      <div class="col-md-6 col-lg-4">
+        <div class="testimonial-card bg-white text-dark p-4 rounded-4 shadow h-100">
+          <div class="mb-3">
+            <h5 class="mb-0">Anil Joshi</h5>
+            <small class="text-muted">Real Estate Agent, Ahmedabad</small>
+          </div>
+          <div class="text-warning mb-2">★★★★½ <small class="text-muted">(4.8)</small></div>
+          <p class="fst-italic mb-0">“I’ve recommended Nexora to many clients. It's a value addition to any premium property.”</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Add this CSS to your <style> tag or external stylesheet -->
+<style>
+  .testimonial-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+  }
+</style>
+
+
+
+
+
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold">About Nexora</h2>
+            <p class="text-center mx-auto" style="max-width: 800px;">
+                Nexora is a service-based smart home solutions company based in Bengaluru, dedicated to transforming
+                everyday living with intelligent automation.
+                We help you elevate your home lifestyle through secure, energy-efficient, and beautifully integrated
+                smart
+                systems.
+                Our goal is to bring comfort, convenience, and control to your fingertips—customized for your unique
+                needs.
+            </p>
+        </div>
+    </section>
+
+    <section id="services" class="py-5" style="background-color: black; color: grey;">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold text-white">Our Smart Services</h2>
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="card shadow h-100 border-0 text-white bg-dark">
+                        <div class="card-body text-center toggle-btn" data-bs-toggle="collapse"
+                            data-bs-target="#smartLocks" aria-expanded="false" aria-controls="smartLocks"
+                            style="cursor:pointer;">
+                            <img src="https://img.icons8.com/ios-filled/100/ffffff/lock--v1.png" alt="Smart Locks"
+                                width="50">
+                            <h5 class="fw-semibold mt-2">Smart Locks</h5>
+                            <p class="text-light">Keyless entry, remote access, and secure fingerprint authentication.
+                            </p>
+                        </div>
+                        <div id="smartLocks" class="collapse card-footer bg-black">
+                            <img src="lock.png" alt="Smart Locks Detail" class="img-fluid rounded mb-2">
+                            <p class="small text-light">Smart locks provide advanced security with remote access,
+                                real-time monitoring, and biometric authentication.
+                                Biometric Locks: These locks use fingerprint or facial recognition technology for
+                                access. </p>
+                            <p>A smart lock is an electronic lock that allows you to lock and unlock doors using various
+                                digital methods like a smartphone app, voice command, fingerprint, or key fob, instead
+                                of a physical key. They can be integrated into a smart home system and offer remote
+                                control, monitoring, and access management.</p>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow h-100 border-0 text-white bg-dark">
+                        <div class="card-body text-center toggle-btn" data-bs-toggle="collapse"
+                            data-bs-target="#smartSwitch" aria-expanded="false" aria-controls="smartSwitch"
+                            style="cursor:pointer;">
+                            <img src="light-control.png" alt="Smart Switch" width="50">
+                            <h5 class="fw-semibold mt-2">Smart Switch</h5>
+                            <p class="text-light">Control lighting and appliances via app or voice command.</p>
+                        </div>
+                        <div id="smartSwitch" class="collapse card-footer bg-black">
+                            <img src="switch.jpg" alt="Smart Switch Detail" class="img-fluid rounded mb-2">
+                            <p class="small text-light">Smart switches allow seamless control of lights and devices
+                                using your phone or voice assistant. Smart switches are programmable wireless devices
+                                that replace traditional light switches, offering remote control, voice activation, and
+                                scheduling of lights and other connected appliances. They connect to your home's Wi-Fi
+                                or Bluetooth network, allowing you to manage them via a smartphone app or voice
+                                commands. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card shadow h-100 border-0 text-white bg-dark">
+                        <div class="card-body text-center toggle-btn" data-bs-toggle="collapse"
+                            data-bs-target="#smartLighting" aria-expanded="false" aria-controls="smartLighting"
+                            style="cursor:pointer;">
+                            <img src="https://img.icons8.com/ios-filled/100/ffffff/light-on--v1.png"
+                                alt="Smart Lighting" width="50">
+                            <h5 class="fw-semibold mt-2">Smart Lighting</h5>
+                            <p class="text-light">Set moods, schedules, and brightness with your phone.</p>
+                        </div>
+                        <div id="smartLighting" class="collapse card-footer bg-black">
+                            <img src="all.jpg" alt="Smart Lighting Detail" class="img-fluid rounded mb-2">
+                            <p class="small text-light">Customize ambience, automate schedules, and remotely control
+                                lighting to suit your lifestyle.</p>
+                            <p>Smart lighting refers to lighting systems that can be controlled remotely, often through
+                                a smartphone app, voice commands, or smart home systems.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card shadow h-100 border-0 text-white bg-dark">
+                        <div class="card-body text-center toggle-btn" data-bs-toggle="collapse"
+                            data-bs-target="#curtains" aria-expanded="false" aria-controls="curtains"
+                            style="cursor:pointer;">
+                            <img src="smart-curtain.png" alt="Curtains" width="50">
+                            <h5 class="fw-semibold mt-2">Curtains</h5>
+                            <p class="text-light">Automate curtain open/close with time or sunlight control.</p>
+                        </div>
+                        <div id="curtains" class="collapse card-footer bg-black">
+                            <img src="curtains.jpg" alt="Smart Curtains Detail" class="img-fluid rounded mb-2">
+                            <p class="small text-light">Motorized curtains that adjust automatically based on schedules
+                                or sensors, bringing style and efficiency to your space.</p>
+                            <p>Smart curtains refer to motorised curtains that can be conveniently operated through
+                                various means such as a remote control, voice commands, or a mobile app. They offer
+                                automation capabilities that enhance the convenience and comfort of your home.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card shadow h-100 border-0 text-white bg-dark">
+                        <div class="card-body text-center toggle-btn" data-bs-toggle="collapse"
+                            data-bs-target="#acControl" aria-expanded="false" aria-controls="acControl"
+                            style="cursor:pointer;">
+                            <img src="https://img.icons8.com/ios-filled/100/ffffff/air-conditioner.png" alt="AC Control"
+                                width="0">
+                            <h5 class="fw-semibold mt-2">AC Control</h5>
+                            <p class="text-light">Remote temperature and comfort control at your fingertips.</p>
+
+                        </div>
+                        <div id="acControl" class="collapse card-footer bg-black">
+                            <img src="ac.png" alt="AC Control Detail" class="img-fluid rounded mb-2">
+                            <p class="small text-light">Manage your home's cooling for optimal comfort and energy
+                                savings with smart AC control.</p>
+                            <p>The ability to manage your air conditioner's settings and operation using a smartphone
+                                app or voice commands, often via a Wi-Fi-enabled controller or a smart AC unit. This
+                                allows for remote access, scheduling, and integration with smart home ecosystems. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card shadow h-100 border-0 text-white bg-dark">
+                        <div class="card-body text-center toggle-btn" data-bs-toggle="collapse" data-bs-target="#music"
+                            aria-expanded="false" aria-controls="music" style="cursor:pointer;">
+                            <img src="https://img.icons8.com/ios-filled/100/ffffff/musical-notes.png" alt="Music"
+                                width="50">
+                            <h5 class="fw-semibold mt-2">Music</h5>
+                            <p class="text-light">Control your music from any room with one tap.</p>
+                        </div>
+                        <div id="music" class="collapse card-footer bg-black">
+                            <img src="music.png" alt="Music Detail" class="img-fluid rounded mb-2">
+                            <p class="small text-light">Stream music wirelessly throughout your home with multi-room
+                                audio systems.</p>
+                            <p>Smart music control refers to the ability to remotely manage and interact with audio
+                                playback, often through smartphone apps or smart home systems. These systems offer
+                                features like mood-based playlists, remote control, and integration with various audio
+                                devices.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card shadow h-100 border-0 text-white bg-dark">
+                        <div class="card-body text-center toggle-btn" data-bs-toggle="collapse"
+                            data-bs-target="#securityCams" aria-expanded="false" aria-controls="securityCams"
+                            style="cursor:pointer;">
+                            <img src="cctv.png" alt="Security Cameras" width="50">
+                            <h5 class="fw-semibold mt-2">Security Cameras</h5>
+                            <p class="text-light">Monitor your home 24/7 with smart surveillance.</p>
+                        </div>
+                        <div id="securityCams" class="collapse card-footer bg-black">
+                            <img src="cameras.jpg" alt="Security Camera Detail" class="img-fluid rounded mb-2">
+                            <p class="small text-light">Advanced camera systems with motion alerts, cloud storage, and
+                                remote access for peace of mind wherever you are.</p>
+                            <p>Smart security cameras are surveillance cameras that can be connected to the internet and
+                                controlled remotely via smartphone or other devices. They offer features like motion
+                                detection, facial recognition, and night vision, often with the ability to send alerts
+                                and notifications.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card shadow h-100 border-0 text-white bg-dark">
+                        <div class="card-body text-center toggle-btn" data-bs-toggle="collapse"
+                            data-bs-target="#smartSensors" aria-expanded="false" aria-controls="smartSensors"
+                            style="cursor:pointer;">
+                            <img src="smart-home.png" alt="Smart Sensors" width="50">
+                            <h5 class="fw-semibold mt-2">Smart Sensors</h5>
+                            <p class="text-light">Automate responses to motion, temperature, or humidity.</p>
+                        </div>
+                        <div id="smartSensors" class="collapse card-footer bg-black">
+                            <img src="sensor.jpg" alt="Smart Sensors Detail" class="img-fluid rounded mb-2">
+                            <p class="small text-light">Sensors detect environmental changes and trigger automated
+                                responses like lighting or climate adjustments.</p>
+                            <p>Smart home sensors are devices that monitor various aspects of a home's environment and
+                                activity, providing alerts and information to users via a smartphone app or other smart
+                                device. These sensors can detect things like fire, water leaks, intrusions, and changes
+                                in air quality, acting as a layer of protection and peace of mind for homeowners.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow h-100 border-0 text-white bg-dark">
+                        <div class="card-body text-center toggle-btn" data-bs-toggle="collapse"
+                            data-bs-target="#voiceAssistant" aria-expanded="false" aria-controls="voiceAssistant"
+                            style="cursor:pointer;">
+                            <img src="https://img.icons8.com/ios-filled/100/ffffff/voice-presentation.png"
+                                alt="Voice Assistant" width="50">
+                            <h5 class="fw-semibold mt-2">Voice Assistant</h5>
+                            <p class="text-light">Control your smart home using simple voice commands.</p>
+                        </div>
+                        <div id="voiceAssistant" class="collapse card-footer bg-black">
+                            <img src="voice.png" alt="Voice Assistant Detail" class="img-fluid rounded mb-2">
+                            <p class="small text-light">Use Alexa, Google Assistant, or Siri to manage your devices with
+                                voice commands.</p>
+                            <p>To control a home automation solution through voice, you'll need a voice assistant like
+                                Google Assistant or Amazon Alexa, smart devices compatible with your chosen assistant,
+                                and a smart hub to connect them all. This setup allows you to use voice commands to
+                                control lights, thermostats, and other smart devices.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script>
+        document.querySelectorAll('.collapse').forEach(function (collapseElement) {
+            collapseElement.addEventListener('hidden.bs.collapse', function () {
+                this.previousElementSibling.style.borderBottom = "none"; // remove border when collapsed
+            });
+            collapseElement.addEventListener('shown.bs.collapse', function () {
+                this.previousElementSibling.style.borderBottom = "2px solid white"; // add border when expanded
+            });
+        });
+    </script>
+
+    <section id="faq" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                            What areas does Nexora serve?
+                        </button>
+                    </h2>
+                    <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Nexora currently serves Bengaluru and surrounding areas. We are expanding soon to other
+                            major
+                            cities in
+                            India.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                            What is the average installation time?
+                        </button>
+                    </h2>
+                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Installation typically takes 1–2 days depending on the size and complexity of your home
+                            automation setup.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                            Is internet required for all automation features?
+                        </button>
+                    </h2>
+                    <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Most features require internet for remote access and updates, but basic automation (like
+                            lighting) can
+                            work offline.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blogs" class="py-5" style="background-color: #000; color: #fff;">
+  <div class="container">
+    <h2 class="text-center mb-4 fw-bold text-white">Latest from Our Blog</h2>
+    <div class="row g-4">
+      <!-- Blog 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm bg-dark text-white">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">Why Smart Homes Are the Future</h5>
+            <p class="card-text">Explore how automation is redefining convenience, safety, and energy savings.</p>
+            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#blogModal1">Read More</button>
+          </div>
+        </div>
+      </div>
+      <!-- Blog 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm bg-dark text-white">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">Top 5 Smart Devices You Need</h5>
+            <p class="card-text">Discover must-have smart home devices that are affordable and powerful.</p>
+            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#blogModal2">Read More</button>
+          </div>
+        </div>
+      </div>
+      <!-- Blog 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm bg-dark text-white">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">How Nexora Customizes Your Experience</h5>
+            <p class="card-text">Learn how Nexora tailors smart solutions based on your lifestyle.</p>
+            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#blogModal3">Read More</button>
+          </div>
+        </div>
+      </div>
+      <!-- Blog 4 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm bg-dark text-white">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">The Future of Home Security with Smart Tech</h5>
+            <p class="card-text">Discover smart security systems offering cutting-edge protection.</p>
+            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#blogModal4">Read More</button>
+          </div>
+        </div>
+      </div>
+      <!-- Blog 5 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm bg-dark text-white">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">How Smart Homes Contribute to Sustainability</h5>
+            <p class="card-text">Learn how smart tech helps reduce energy usage and carbon footprint.</p>
+            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#blogModal5">Read More</button>
+          </div>
+        </div>
+      </div>
+      <!-- Blog 6 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm bg-dark text-white">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">Smart Lighting Systems: Efficiency Meets Elegance</h5>
+            <p class="card-text">Explore the benefits of automated lighting for mood, energy, and style.</p>
+            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#blogModal6">Read More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <!-- Modal Template -->
+  <!-- Repeat and customize for each blog -->
+  <!-- Blog Modal 1 -->
+  <div class="modal fade" id="blogModal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-fullscreen">
+      <div class="modal-content text-white" style="background-color: #111;">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Why Smart Homes Are the Future</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex flex-wrap">
+          <div class="col-md-6">
+            <img src="best.jpg" class="img-fluid mb-3 rounded" alt="Image 1">
+            <img src="best2.jpg" class="img-fluid rounded" alt="Image 2">
+          </div>
+          <div class="col-md-6 ps-md-4">
+            <p>Automation is revolutionizing our homes by improving energy efficiency, comfort, and security. With devices like smart thermostats and lighting systems, homeowners enjoy enhanced control and convenience.</p>
+            <p>Smart technology is evolving fast, making homes not just intelligent, but intuitive—predicting needs and optimizing energy use automatically.</p>
+            <h5>Enhanced Convenience and Automation:</h5>
+<p><u>1.Remote Control:</u>
+Homeowners can control various aspects of their homes, like lighting, temperature, and appliances, from anywhere with an internet connection. </p>
+<p><u>2.Automation:</u>
+Smart homes can automate tasks like adjusting the thermostat based on occupancy or turning on lights at specific times, saving time and effort. </p>
+<p><u>3.Personalization:</u>
+Smart home systems can be customized to individual preferences, creating a more comfortable and tailored living environment.</p> 
+<p><u>4. Increased Security and Safety:</u></p>
+<p><u>a. Real-time Monitoring:</u>
+Smart security systems, including cameras and motion detectors, provide real-time monitoring and alerts, enhancing home security. </p>
+<p><u>b. Remote Access:</u>
+Homeowners can monitor their homes remotely, providing peace of mind and the ability to take action if needed.</p> 
+<p> <u>5.Advanced Features:</u></p>
+<p>Smart homes can incorporate advanced security features like smart locks and alarms, further enhancing safety.</p>
+<p><u>6.Real-time Monitoring and Insights:</u></p>
+<p>Smart homes provide insights into energy consumption patterns, allowing homeowners to identify areas where they can save energy.</p> 
+</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Repeat the above modal structure for other blogs (blogModal2 to blogModal6) -->
+  <!-- Example for blogModal2 -->
+  <div class="modal fade" id="blogModal2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-fullscreen">
+      <div class="modal-content text-white" style="background-color: #111;">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Top 5 Smart Devices You Need</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex flex-wrap">
+          <div class="col-md-6">
+            <img src="sensor.jpg" class="img-fluid mb-3 rounded" alt="Image 1">
+            <img src="smart9.jpg" class="img-fluid rounded" alt="Image 2">
+          </div>
+          <div class="col-md-6 ps-md-4">
+            <p>From smart plugs to voice-controlled assistants, the top five smart devices can significantly boost your home's functionality without breaking the bank.</p>
+            <p>These include smart lights, thermostats, security cameras, voice assistants, and door locks—all easily integrated and user-friendly.</p>
+            <p>Automation is revolutionizing our homes by improving energy efficiency, comfort, and security. With devices like smart thermostats and lighting systems, homeowners enjoy enhanced control and convenience.</p>
+            <p>Smart technology is evolving fast, making homes not just intelligent, but intuitive—predicting needs and optimizing energy use automatically.</p>
+            <h5>Enhanced Convenience and Automation:</h5>
+<p><u>1. Smart Speaker/Voice Assistant:</u> A smart speaker with a voice assistant like Amazon Alexa, Google Assistant, or Siri is a central command center for your smart home. It allows you to control other smart devices with voice commands, such as turning lights on and off, adjusting the thermostat, or locking doors</p>
+<p><u>2. Smart Lighting System:</u> Smart lighting, like Philips Hue, allows you to control your lights remotely and create different lighting scenarios, like a relaxing ambiance or a bright, energy-efficient setting. You can also control your lighting with voice commands or set schedule</p>
+
+<p><u>3. Smart Thermostat:</u> A smart thermostat, like the Nest or EcoBee, learns your temperature preferences and automatically adjusts the temperature, helping you save energy and stay comfortable. You can also control the thermostat remotely via a smartphone app or voice commands</p>
+
+<p><u>4. Smart Security Camera:</u> A smart security camera, like Ring or Wyze Cam, provides real-time monitoring of your home and sends alerts when motion is detected. You can also view live footage and recordings remotely</p>
+
+<p><u>5. Smart Lock:</u> A smart lock, like August or Kwikset, allows you to remotely lock and unlock your doors, grant temporary access to guests, and track access history. You can also control the lock with voice commands or a smartphone app</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- blogModal3 -->
+  <div class="modal fade" id="blogModal3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-fullscreen">
+      <div class="modal-content text-white" style="background-color: #111;">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">How Nexora Customizes Your Experience</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex flex-wrap">
+          <div class="col-md-6">
+            <img src="best3.jpg" class="img-fluid mb-3 rounded" alt="Image 1">
+            <img src="best4.jpg" class="img-fluid rounded mb-3" alt="Image 2">
+            <img src="best5.jpg" class="img-fluid mb-3 rounded" alt="Image 1">
+            <img src="best10.jpg" class="img-fluid rounded" alt="Image 2">
+          </div>
+          <div class="col-md-6 ps-md-4">
+            <p>Welcome to Nexora – Where Smart Living Begins.</p>
+<p>We specialize in tailor-made smart home automation solutions that adapt to your daily routines.</p>
+From voice-controlled lighting to intelligent security, every detail is customized for your comfort.
+Our mission is to make your home smarter, safer, and effortlessly more efficient.
+With a focus on elegance and simplicity, we blend innovation seamlessly into your space.
+Professional installation, premium support, and future-ready technology—only with Nexora.
+We don’t just install devices; we craft intelligent lifestyles built around your needs.
+Join hundreds of happy homeowners who’ve transformed their spaces—Elevate & Evolve with Nexora.</p>
+            <p>We analyze your living habits, space layout, and preferences to tailor the ideal automation setup—making every moment more efficient and enjoyable.</p>
+            <p>From motion-activated lighting to custom voice controls, Nexora adapts smart living to your lifestyle, not the other way around.</p>
+            <p>Nexora transforms ordinary homes into intelligent, responsive living spaces tailored just for you.
+With cutting-edge smart automation, we bring comfort, security, and efficiency to your fingertips.
+
+<p>Every setup is uniquely customized to match your lifestyle and preferences—no one-size-fits-all.
+Our expert team ensures a seamless, stress-free installation backed by ongoing support.
+Experience the future of living with Nexora</p>
+<div class="col-md-9">
+            <img src="best9.jpg" class="img-fluid mb-4 rounded" alt="Image 1">
+            <img src="best2.jpg" class="img-fluid mb-4 rounded" alt="Image 2">
+            <img src="smart8.jpg" class="img-fluid mb-4 rounded" alt="Image 1">
+            
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- blogModal4 -->
+  <div class="modal fade" id="blogModal4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-fullscreen">
+      <div class="modal-content text-white" style="background-color: #111;">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">The Future of Home Security with Smart Tech</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex flex-wrap">
+          <div class="col-md-6">
+            <img src="img7.jpg" class="img-fluid mb-3 rounded" alt="Image 1">
+            <img src="img8.jpg" class="img-fluid rounded" alt="Image 2">
+          </div>
+          <div class="col-md-6 ps-md-4">
+            <p>Smart cameras, motion detectors, and remote alerts provide peace of mind 24/7. Whether you’re at work or on vacation, your home stays protected.</p>
+            <p>Advanced systems use AI to detect unusual behavior, giving you real-time insights and control over access and surveillance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- blogModal5 -->
+  <div class="modal fade" id="blogModal5" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-fullscreen">
+      <div class="modal-content text-white" style="background-color: #111;">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">How Smart Homes Contribute to Sustainability</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex flex-wrap">
+          <div class="col-md-6">
+            <img src="img9.jpg" class="img-fluid mb-3 rounded" alt="Image 1">
+            <img src="img10.jpg" class="img-fluid rounded" alt="Image 2">
+          </div>
+          <div class="col-md-6 ps-md-4">
+            <p>Smart systems optimize power usage, reduce water waste, and limit heating and cooling costs—leading to a greener planet and lower bills.</p>
+            <p>Nexora helps you live eco-consciously by automating efficient behaviors without compromising on comfort or convenience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- blogModal6 -->
+  <div class="modal fade" id="blogModal6" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-fullscreen">
+      <div class="modal-content text-white" style="background-color: #111;">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Smart Lighting Systems: Efficiency Meets Elegance</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex flex-wrap">
+          <div class="col-md-6">
+            <img src="img11.jpg" class="img-fluid mb-3 rounded" alt="Image 1">
+            <img src="img12.jpg" class="img-fluid rounded" alt="Image 2">
+          </div>
+          <div class="col-md-6 ps-md-4">
+            <p>Dynamic lighting systems adjust based on time of day, activity, or user preference—saving power and enhancing ambiance.</p>
+            <p>With smart lights, create scenes for entertainment, work, or relaxation, all controlled from your phone or voice assistant.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    
+
+    <section id="contact-us" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold">Contact Us</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <p class="text-lg text-gray-700">
+                        📍 Herbal Bengaluru, Chiranjeevi Layout,<br>
+                        Near Vidyaniketan School, Hebbal 560012
+                    </p>
+                    <p class="text-lg mt-2 text-gray-700">📞 <a href="tel:7048946837"
+                            class="text-blue-600 hover:underline">7048946837</a></p>
+                    <p class="text-lg text-gray-700">✉️ <a href="nexora.homes18@gmail.com"
+                            class="text-blue-600 hover:underline">nexora.homes18@gmail.com"</a></p>
+
+                    <div class="flex justify-center mt-4 space-x-6">
+                        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                            <img src="facebook-icon.png" alt="Facebook" class="h-8 w-8">
+                        </a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                            <img src="twitter-icon.png" alt="Twitter" class="h-8 w-8">
+                        </a>
+                        <a href="https://wa.me/917048946837" target="_blank" aria-label="WhatsApp">
+                            <img src="whatsapp-icon.png" alt="WhatsApp" class="h-8 w-8">
+                        </a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                            <img src="instagram-icon.png" alt="Instagram" class="h-8 w-8">
+                        </a>
+                        <a href="https://www.linkedin.com/in/raviharsha2023" target="_blank" aria-label="LinkedIn">
+                            <img src="linkedin-icon.png" alt="LinkedIn" class="h-8 w-8">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="quoteModalLabel">Get a Free Consultation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="quote-form">
+                        <div class="mb-3">
+                            <label class="form-label">Your Name</label>
+                            <input type="text" class="form-control" name="user_name" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Your Email</label>
+                            <input type="email" class="form-control" name="user_email" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Your Phone</label>
+                            <input type="tel" class="form-control" name="user_phone" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" name="message" rows="4" required></textarea>
+                        </div>
+                        <div id="form-response" class="text-center mb-2"></div>
+                        <button type="submit" class="btn btn-primary w-100">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        (function () {
+            emailjs.init("rRx9NXkXGDKd46xyk"); // Replace with your EmailJS public key
+        })();
+
+        document.getElementById("quote-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const form = this;
+
+            // Send form to Nexora (your company email)
+            emailjs.sendForm("service_nexora18", "template_1xexvkv", form)
+                .then(() => {
+                    // Auto-reply to customer
+                    emailjs.send("service_nexora18", "template_9obtzqk", {
+                        user_email: form.user_email.value,
+                        user_name: form.user_name.value
+                    });
+
+                    // Simple alert with a personalized message
+                    alert(`Thank you, ${form.user_name.value}. We have received your request and will get in touch with you shortly. Have a nice day!`);
+
+                    // Reset the form
+                    form.reset();
+
+                    // Close the quote form modal (if it's open)
+                    const quoteModal = bootstrap.Modal.getInstance(document.getElementById("quoteModal"));
+                    if (quoteModal) quoteModal.hide();
+                }, (error) => {
+                    console.error("EmailJS Error:", error);
+                    alert("Failed to send. Try again.");
+                });
+        });
+    </script>
+
+    </div>
+    </div>
+
+
+
+</body>
+
+</html>
